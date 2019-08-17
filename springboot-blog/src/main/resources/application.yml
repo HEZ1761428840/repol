@@ -29,6 +29,6 @@ mail:
 logging:
   level:
     com:
-      yc: trace
+      yc: debug
 
  
