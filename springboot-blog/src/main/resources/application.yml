@@ -9,6 +9,12 @@ spring:
     username: root
     password: a
     driver-class-name: com.mysql.jdbc.Driver
+  
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
       
 # 邮件服务配置
   mail:
@@ -24,6 +30,12 @@ spring:
 mail:
   fromMail:
     addr: 1761428840@qq.com
+
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
     
 # 日志输出
 logging:

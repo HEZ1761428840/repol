@@ -25,7 +25,9 @@
         	我要注册
         </a>&nbsp;&nbsp;
         <a href="" rel="nofollow">
-        找回密码</a> 
+        找回密码</a> &nbsp;&nbsp;
+        <a href="toedit" rel="nofollow">
+        发表博文</a> 
       </div>
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-navbar" aria-expanded="false"> <span class="sr-only"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>

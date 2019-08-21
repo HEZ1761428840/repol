@@ -137,13 +137,8 @@
 	        </ol>
         </c:forEach>
         
-       <div class="quotes">
-       		<span class="disabled">首页</span>
-       		<span class="disabled">上一页</span>
-       		<a class="current">1</a>
-       		<a href="">2</a>
-       		<span class="disabled">下一页</span>
-       		<span class="disabled">尾页</span>
+       <div class="quotes" style="display: none;">
+       		<a id="commPage" href="article">下一页</a>
        	</div>
       </div>
     </div>
@@ -215,6 +210,58 @@
 <!--jsp 动作标签引入 页脚   -->
 <jsp:include page="common/footer.jsp"></jsp:include>
 
+<script src="js/jquery.ias.js"></script>
+
+<script type="text/javascript">
+//无限滚动反翻页
+ias = jQuery.ias({
+	history: false,
+	container : '#postcomments',
+	item: '.commentlist',
+	pagination: '.quotes',
+	next: '#commPage'
+});
+
+page = 1;
+ias.on('load', function(event){
+	event.ajaxOptions.data = {
+		page: ++page,
+		id: ${article.id}
+	};
+	
+});
+
+/**
+ * 渲染完成后的事件
+ * */
+ias.on('rendered', function(items) {
+	//沙漏
+	$('.excerpt .thumb').lazyload({
+		placeholder: '/images/occupying.png',
+		threshold: 400
+	});
+	$('.excerpt img').attr('draggable','false');
+	$('.excerpt a').attr('draggable','false');
+});
+
+/**
+ * 旧版写法：loader: '<div class="pagination-loading"><img src="/images/loading.gif" /></div>',
+ */
+ias.extension(new IASSpinnerExtension({
+	src: '/images/loading.gif',//加载等待显示的图片
+}));
+
+/**
+ *旧版写法 trigger: '查看更多',
+ * triggerPageThreshold: 5
+ * @returns
+ */
+ias.extension(new IASTriggerExtension({
+	text: '查看更多',// 鼠标点击加载提示的文字
+	offset:2		//到第几页后，开始鼠标点击加载
+}));
+
+</script>
 
 <script src="js/jquery.qqFace.js"></script> 
 <script type="text/javascript">
@@ -222,7 +269,7 @@ $(function(){
 	$('.emotion').qqFace({
 		id : 'facebox', 
 		assign:'comment-textarea', 
-		path:'/Home/images/arclist/'	//表情存放的路径
+		path:'/images/arclist/'	//表情存放的路径
 	});
  });   
 </script>

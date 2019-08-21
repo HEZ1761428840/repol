@@ -67,5 +67,14 @@ public class ArticleBiz {
 		
 		return am.selectByExample(example);
 	}
+	
+	/**
+	 * 添加博文
+	 * @param article
+	 */
+	public void save(Article article) {
+		am.insert(article);
+	}
+	
 
 }
