@@ -29,7 +29,7 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-
+		<!-- springboot 测试驱动包 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -41,12 +41,12 @@
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
-
+		<!-- servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 		</dependency>
-
+		<!-- jstl -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -58,7 +58,8 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>2.1.0</version>
 		</dependency>
-
+		
+		<!-- mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -79,7 +80,12 @@
 			<artifactId>pagehelper-spring-boot-starter</artifactId>
 			<version>1.2.10</version>
 		</dependency>
-
+		
+		<!-- gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

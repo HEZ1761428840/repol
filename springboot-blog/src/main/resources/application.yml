@@ -10,6 +10,12 @@ spring:
     password: a
     driver-class-name: com.mysql.jdbc.Driver
   
+  resources:
+    # web文件映射（数组）
+    staticLocations:
+      - classpath:/static/
+      - file:/Users/helanying/java/resources/blog/
+    
   http:
     encoding:
       force: true

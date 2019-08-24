@@ -25,9 +25,6 @@ public class CommentAction {
 	@PostMapping("comment")
 	public Result comment(@Valid Comment comm, Errors errors,
 			@SessionAttribute(name = "loginedUser", required = false) User user) {
-		if(user == null) {
-			return new Result(0, "请先登录");
-		}
 		//设置评论人id
 		comm.setCreateby(user.getId());
 		//设置创建时间
@@ -44,6 +41,5 @@ public class CommentAction {
 			e.printStackTrace();
 			return new Result(0, "业务繁忙请稍后再试！");
 		}
-		
 	}
 }

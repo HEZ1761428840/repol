@@ -93,13 +93,13 @@ public class ArticleAction {
 			String CKEditorFuncNum) throws IllegalStateException, IOException {
 		
 		String fname = file.getOriginalFilename();
-		File dest = new File("/Users/helanying/java/resources/" + fname);
+		File dest = new File("/Users/helanying/java/resources/blog/upload/" + fname);
 		file.transferTo(dest);
 		
 		//拼接回调js代码
 		String js = "<script type=\"text/javascript\">";
         js += "window.parent.CKEDITOR.tools.callFunction(" + CKEditorFuncNum
-               + ",'??????????????','')";
+               + ",'upload/"+ fname +"','')";
         js += "</script>";
 		return js;
 	}
