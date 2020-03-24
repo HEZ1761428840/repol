@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 import com.yc.blog.bean.Comment;
 import com.yc.blog.bean.User;
-import com.yc.blog.biz.BizException;
 import com.yc.blog.biz.CommentBiz;
 import com.yc.blog.vo.Result;
 
